@@ -1,0 +1,26 @@
+{
+    "name": "test",
+    "description": "test",
+    "manifest_version": 2,
+    "version": "1.0",
+    "permissions": [
+      "storage",
+      "webNavigation",
+      "tabs",
+      "*://*/"
+    ],
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["page.js"]
+    }],
+    "background": {
+      "scripts": [
+        "background.js"
+      ],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_title": "Record",
+      "default_popup": "index.html"
+    }
+  }
